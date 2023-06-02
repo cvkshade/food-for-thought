@@ -93,7 +93,8 @@
     background-color: rgba(13, 13, 14, 0.473);
     box-shadow: 0 0 2px white;
     color: #fff;
-    font-size: 1.3em;
+    font-size: small;
+
     user-select: none;
     text-transform: uppercase;
     font-weight: bolder;
@@ -103,8 +104,12 @@
     background-color: rgba(104, 104, 150, 0.336);
     transition: 500ms;
 }
+.enter {
+    background-color: forestgreen;
+    grid-column: span 2;
+}
 .delete {
-    grid-column: 2;
+    grid-column: span 2;
     background-color: red;
 }
 .riddle {
@@ -120,4 +125,31 @@
 }
 .correct {
     background-color: green;
+}
+
+/* Responsiveness */
+@media (width <= 900px) AND ( width > 768px) {
+    .imageDisplay {
+        width: 94%;
+    }
+}
+@media (width <= 768px) AND ( width > 480px) {
+    .imageDisplay {
+        width: 90%;
+    }
+   .delete {
+    grid-column: span 2;
+   }
+   .enter {
+    grid-column: span 2;
+   }
+}
+@media (width <= 480px) {
+    .imageDisplay {
+        width: 90%;
+        
+    }
+    .alphabet {
+        padding: 2px 3px;
+    }
 }
