@@ -129,11 +129,22 @@
 
 /* Responsiveness */
 @media (width <= 900px) AND ( width > 768px) {
+    .main {
+        grid-template-rows: 1fr 20%;
+    }
     .imageDisplay {
+        
         width: 94%;
     }
+    .main {
+        height: 100svh;
+    }
+    
 }
 @media (width <= 768px) AND ( width > 480px) {
+    .main {
+        height: 100svh;
+    }
     .imageDisplay {
         width: 90%;
     }
@@ -143,13 +154,19 @@
    .enter {
     grid-column: span 2;
    }
+   .alphabet {
+    padding: 12px 10px;
+}
 }
 @media (width <= 480px) {
     .imageDisplay {
         width: 90%;
         
     }
+    .bottom {
+        height: 20%;
+    }
     .alphabet {
-        max-height: 5px;
+        padding: 12px 10px;
     }
 }
