@@ -10,126 +10,239 @@ let alGuess = [];
 
 const riddles = [
     {
-        question: "What has keys but can't open locks?",
-        answer: "Piano"
+      question: "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
+      answer: "Echo"
     },
     {
-        question: "I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?",
-        answer: "Echo"
+      question: "What has keys but can't open locks?",
+      answer: "Piano"
     },
     {
-        question: "What has hands but cannot clap?",
-        answer: "Clock"
+      question: "I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?",
+      answer: "Pencil"
     },
     {
-        question: "I have branches, but no fruit, trunk, or leaves. What am I?",
-        answer: "Bank"
+      question: "I am the beginning of the end, and the end of time and space. I am essential to creation, and I surround every place. What am I?",
+      answer: "E"
     },
     {
-        question: "What is full of holes but still holds water?",
-        answer: "Sponge"
+      question: "I am always hungry, I must always be fed, the finger I touch will soon turn red. What am I?",
+      answer: "Fire"
     },
     {
-        question: "What can you catch but not throw?",
-        answer: "A cold"
+      question: "I have keys but no locks. I have space but no room. You can enter, but can't go outside. What am I?",
+      answer: "Keyboard"
     },
     {
-        question: "I have keys, but no locks. I have space, but no room. You can enter, but can't go outside. What am I?",
-        answer: "Keyboard"
+      question: "I am the ultimate killing machine, used not once but a hundred times. What am I?",
+      answer: "Gun"
     },
     {
-        question: "What has a heart that doesn't beat?",
-        answer: "Artichoke"
+      question: "What runs but never walks, has a mouth but never talks, has a bed but never sleeps, and has a head but never weeps?",
+      answer: "River"
     },
     {
-        question: "What has a neck but no head?",
-        answer: "Bottle"
+      question: "I'm as light as a feather, yet the strongest person can't hold me for much longer than a minute. What am I?",
+      answer: "Breath"
     },
     {
-        question: "I have cities but no houses, forests but no trees, and rivers but no water. What am I?",
-        answer: "Map"
+      question: "I am not alive, but I can grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?",
+      answer: "Fire"
     },
     {
-        question: "What has one eye but cannot see?",
-        answer: "Needle"
+      question: "The more you take, the more you leave behind. What am I?",
+      answer: "Footsteps"
     },
     {
-        question: "I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?",
-        answer: "Pencil"
+      question: "I am a word of letters three; add two and fewer there will be. What word am I?",
+      answer: "Few"
     },
     {
-        question: "I am always hungry, I must always be fed. The finger I touch will soon turn red. What am I?",
-        answer: "Fire"
+      question: "I am full of holes but can still hold water. What am I?",
+      answer: "Sponge"
     },
     {
-        question: "I can fly without wings, cry without eyes. Wherever I go, darkness follows me. What am I?",
-        answer: "Cloud"
+      question: "I can be cracked, made, told, and played. What am I?",
+      answer: "Joke"
     },
     {
-        question: "What comes once in a minute, twice in a moment, but never in a thousand years?",
-        answer: "Letter 'M'"
+      question: "You see me once in June, twice in November, and not at all in May. What am I?",
+      answer: "e"
     },
     {
-        question: "I am the beginning of everything, the end of time and space, the beginning of every end, and the end of every place. What am I?",
-        answer: "Letter 'E'"
+      question: "I can be long or short. I can be grown or bought. I can be painted or left bare. I can be round or square. What am I?",
+      answer: "Fingernail"
     },
     {
-        question: "I am an odd number. Take away a letter and I become even. What number am I?",
-        answer: "Seven"
+      question: "I can be cracked, made, told, and played. What am I?",
+      answer: "Joke"
     },
     {
-        question: "I am a word of six; my first three letters refer to an automobile; my last three letters refer to a household animal; my first four letters is a fish; my whole is found in your room. What am I?",
-        answer: "Carpet"
+      question: "I'm tall when I'm young, and I'm short when I'm old. What am I?",
+      answer: "Candle"
     },
     {
-        question: "I am always on the dinner table, but you can't eat me. What am I?",
-        answer: "Plate"
+      question: "I can fly without wings, cry without eyes, and run without legs. What am I?",
+      answer: "Cloud"
+    },
+   
+    {
+      question: "I am black when you buy me, red when you use me, and gray when you throw me away. What am I?",
+      answer: "Charcoal"
     },
     {
-        question: "What can be broken but is never held?",
-        answer: "Promise"
+      question: "What is so fragile that saying its name breaks it?",
+      answer: "Silence"
     },
     {
-        question: "What has a heart that doesn't beat and a bed that doesn't sleep?",
-        answer: "Hospital"
+      question: "I'm always in front and never behind. What am I?",
+      answer: "Future"
     },
     {
-        question: "I have keys but no locks. I have space but no room. You can enter, but can't go outside. What am I?",
-        answer: "Keyboard"
+      question: "What can be caught but never thrown?",
+      answer: "Cold"
     },
     {
-        question: "I am an insect, and the first part of my name is the name of another insect. What am I?",
-        answer: "Beetle"
+      question: "I am an odd number. Take away one letter and I become even. What number am I?",
+      answer: "Seven"
     },
     {
-        question: "What has a face that doesn't frown, a bed but never sleeps, and runs but never walks?",
-        answer: "River"
+      question: "I am a box that holds keys without locks, yet they can unlock your soul. What am I?",
+      answer: "Piano"
     },
     {
-        question: "I am taken from a mine and shut in a wooden case. When you need me, you throw me away. What am I?",
-        answer: "Matchstick"
+      question: "I can be cracked, made, told, and played. What am I?",
+      answer: "Joke"
     },
     {
-        question: "What gets wet while drying?",
-        answer: "Towel"
+      question: "I'm not alive, but I can grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?",
+      answer: "Fire"
     },
     {
-        question: "I am always in front of you but can never be seen. What am I?",
-        answer: "Future"
+      question: "I am always hungry, I must always be fed, the finger I touch will soon turn red. What am I?",
+      answer: "Fire"
     },
     {
-        question: "What has many teeth but can't bite?",
-        answer: "Comb"
+      question: "What has many keys but can't open any locks?",
+      answer: "Piano"
     },
     {
-        question: "What has a head and a tail but no body?",
-        answer: "Coin"
+      question: "I am a word of letters three; add two and fewer there will be. What word am I?",
+      answer: "Few"
     },
     {
-        question: "What has a thumb and four fingers but is not a hand?",
-        answer: "Glove"
+      question: "I can be cracked, made, told, and played. What am I?",
+      answer: "Joke"
+    },
+    {
+      question: "I am full of holes but can still hold water. What am I?",
+      answer: "Sponge"
+    },
+    {
+      question: "I can be long or short. I can be grown or bought. I can be painted or left bare. I can be round or square. What am I?",
+      answer: "Fingernail"
+    },
+    {
+      question: "I'm tall when I'm young, and I'm short when I'm old. What am I?",
+      answer: "Candle"
+    },
+    {
+      question: "I can fly without wings, cry without eyes, and run without legs. What am I?",
+      answer: "Cloud"
+    },
+    {
+      question: "I'm always in front and never behind. What am I?",
+      answer: "Future"
+    },
+    {
+      question: "What can be caught but never thrown?",
+      answer: "Cold"
+    },
+    {
+      question: "I am an odd number. Take away one letter and I become even. What number am I?",
+      answer: "Seven"
+    },
+    {
+      question: "I am a box that holds keys without locks, yet they can unlock your soul. What am I?",
+      answer: "Piano"
+    },
+    {
+      question: "I am a word that is spelled the same backward and forward. What am I?",
+      answer: "Palindrome"
+    },
+    {
+      question: "I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?",
+      answer: "Pencil"
+    },
+    {
+      question: "I am a ship that can be made to ride the greatest waves. I am not built by objects, but by minds. What am I?",
+      answer: "Friendship"
+    },
+    {
+      question: "I'm not alive, but I can grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?",
+      answer: "Fire"
+    },
+    {
+      question: "I'm as light as a feather, yet the strongest person can't hold me for much longer than a minute. What am I?",
+      answer: "Breath"
+    },
+    {
+      question: "I am the beginning of the end, and the end of time and space. I am essential to creation, and I surround every place. What am I?",
+      answer: "E"
+    },
+    {
+      question: "I am always hungry, I must always be fed, the finger I touch will soon turn red. What am I?",
+      answer: "Fire"
+    },
+    {
+      question: "I have keys but no locks. I have space but no room. You can enter, but can't go outside. What am I?",
+      answer: "Keyboard"
+    },
+    {
+      question: "I am full of holes, but still holds water. What am I?",
+      answer: "Sponge"
+    },
+    {
+      question: "I am the ultimate killing machine, used not once but a hundred times. What am I?",
+      answer: "Gun"
+    },
+    {
+      question: "What runs but never walks, has a mouth but never talks, has a bed but never sleeps, and has a head but never weeps?",
+      answer: "River"
+    },
+    {
+      question: "I have a heart that doesn't beat. I have a home but I never sleep. I can take a man's house and build another's. And I love to play games with my many brothers. I am a king among fools. Who am I?",
+      answer: "Ace of Spades"
+    },
+    {
+      question: "I'm as light as a feather, yet the strongest person can't hold me for much longer than a minute. What am I?",
+      answer: "Breath"
+    },
+    {
+      question: "I am not alive, but I can grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?",
+      answer: "Fire"
+    },
+    {
+      question: "I am a word of letters three; add two and fewer there will be. What word am I?",
+      answer: "Few"
+    },
+    {
+      question: "I am full of holes but can still hold water. What am I?",
+      answer: "Sponge"
+    },
+    {
+      question: "I can be cracked, made, told, and played. What am I?",
+      answer: "Joke"
+    },
+    {
+      question: "You see me once in June, twice in November, and not at all in May. What am I?",
+      answer: "e"
+    },
+    {
+      question: "I can be long or short. I can be grown or bought. I can be painted or left bare. I can be round or square. What am I?",
+      answer: "Fingernail"
     }
-];
+  ];
 
 const updateRiddle = () => {
     let index = Math.floor(Math.random() * riddles.length);
