@@ -1,5 +1,6 @@
 const keys = document.querySelector('.keyboard');
 const guessDisplay = document.querySelector('.guessDisplay');
+let riddlesDisplay = document.querySelector('.riddle');
 
 let answer = [];
 let guessWord ;
@@ -131,9 +132,7 @@ const riddles = [
 ];
 
 const updateRiddle = () => {
-    let riddlesDisplay = document.querySelector('.riddle');
     let index = Math.floor(Math.random() * riddles.length);
-
     if (alGuess.includes(`${index}`)) {
         updateRiddle();
     }
@@ -144,7 +143,18 @@ const updateRiddle = () => {
 }; 
 updateRiddle();
 // Functions
-
+const endGame = () => {
+    let imgDisplay = document.querySelector('.imageDisplay');
+    if (trys === 0){
+        riddlesDisplay.innerHTML = `
+        <fieldset class = "answerDisplay">
+    <legend>The Answer is</legend>
+    <p class="showAnswer">${guessWord}</p>
+    <div class = "slug">Let it sink in.</div>
+</fieldset>`;
+        // alert("alert win");
+    }
+}
 const evaluate = () => {
     if(answer.length != guessWord.length) return;
     let tile = document.querySelector('.guessDisplay');
@@ -152,6 +162,7 @@ const evaluate = () => {
     let guess = answer.reduce((one, two) =>  one + two).toLowerCase();
     guessWord = guessWord.toLowerCase();
     if(trys === 0) return;
+    
 
     if (guessWord === guess){
         
@@ -181,6 +192,13 @@ const evaluate = () => {
 
         console.log('try again');
     }
+
+    let finishGuess = trys === 0;
+    if(finishGuess){
+    endGame();
+
+    }
+
     
     // lifeBar();
 };
