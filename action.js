@@ -271,6 +271,8 @@ const endGame = () => {
 const evaluate = () => {
     if(answer.length != guessWord.length) return;
     let tile = document.querySelector('.guessDisplay');
+    const displayWin = document.querySelector('.imageDisplay');
+
 
     let guess = answer.reduce((one, two) =>  one + two).toLowerCase();
     guessWord = guessWord.toLowerCase();
@@ -280,12 +282,17 @@ const evaluate = () => {
     if (guessWord === guess){
         
         tile.classList.toggle('correct');
+        displayWin.classList.toggle('anim');
+        if(trys === 3){
+            trys = trys;
+        } else {
         trys++;
-        lifeBar();
+        }
         setTimeout(() => {
         guessDisplay.innerHTML = "";
         answer = [];
         tile.classList.toggle('correct');
+        displayWin.classList.toggle('anim');
         updateRiddle();
         }, 2000);
         
@@ -295,7 +302,6 @@ const evaluate = () => {
 
         tile.classList.add('wrong');
         trys--;
-        lifeBar();
         setTimeout(() => {
         guessDisplay.innerHTML = "";
         answer = [];
@@ -305,6 +311,7 @@ const evaluate = () => {
 
         console.log('try again');
     }
+    lifeBar();
 
     let finishGuess = trys === 0;
     if(finishGuess){
@@ -322,17 +329,32 @@ const purge = () => {
 }
 const lifeBar = () => {
     const lifeLine = document.querySelector('.lifeLine');
-    if(trys === 2){
+    const fullLive = document.querySelector('.fullLive');
+    const halfLive = document.querySelector('.halfLive');
+    const liveLine = document.querySelector('.emptyLive');
+    if(trys === 3){
+        lifeLine.style.background = 'linear-gradient(180deg, green, yellow, red)';
+        fullLive.style.display = 'block';
+
+    }else if(trys === 2){
         lifeLine.style.background = 'linear-gradient(180deg, white, white, yellow, yellow, red, red)';
+        halfLive.style.display = 'block';
+        fullLive.style.display = 'none';
 
     } else if (trys === 1){
         lifeLine.style.background = 'linear-gradient(180deg, white, white, white, red)';
+        liveLine.style.display = 'block';
+        fullLive.style.display = 'none';
+        halfLive.style.display = 'none';
 
     } else if (trys === 0){
         lifeLine.style.background = 'linear-gradient(180deg, white, white)';
-
+        liveLine.style.display = 'none';
+        fullLive.style.display = 'none';
+        halfLive.style.display = 'none';
     }
 };
+lifeBar();
 const isALetter = (key) => {
     return key.length === 1 && key.match(/[a-z]/i);
 };

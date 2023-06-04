@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     transition: 500ms;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .main {
@@ -27,11 +27,47 @@
     flex-grow: 12;
     padding-top: 10px;
 }
-
+.lives {
+    /* height: 7em; */
+    position: absolute;
+    top: 8%;
+    left: 8%;
+}
+.shell {
+    color: rgb(253, 253, 253);
+    font-size: 30px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.fullLive, .halfLive, .emptyLive {
+    color: red;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.fullLive {
+    display: none;
+}
+.halfLive {
+    display: none;
+}
+.emptyLive {
+    display: none;
+}
+.anim {
+    border: 8px solid green;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.336);
+    border-left: none;
+}
 .lifeLine {
     position: absolute;
     width: 5px;
-    background: linear-gradient(180deg, green, yellow, red);
+    /* background: linear-gradient(180deg, green, yellow, red); */
     top: 0;
     left: 0;
     bottom: 0;
@@ -43,6 +79,8 @@
     flex-grow: 5;
     background-color: rgba(7, 10, 12, 0.699);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
     position: relative;
     padding: 1rem;
     display: flex;
@@ -86,15 +124,20 @@
     height: 12em;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
 
 }
 .answerDisplay legend {
-    font-size: 1rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
+    font-weight: 800;
+    padding: 0 10px;
 }
 .showAnswer {
     text-transform: uppercase;
     padding-top: 2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 .answerDisplay .slug {
     font-size: 0.8rem;
@@ -121,7 +164,7 @@
     background-color: rgba(12, 12, 14, 0.253);
     box-shadow: 0 0 2px white;
     color: #fff;
-    padding: 10px 0;
+    padding: 7px 0;
     font-size: small;
     user-select: none;
     text-transform: uppercase;
