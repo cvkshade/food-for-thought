@@ -243,8 +243,7 @@ const riddles = [
       answer: "Fingernail"
     }
   ];
-
-const updateRiddle = () => {
+updateRiddle = () => {
     let index = Math.floor(Math.random() * riddles.length);
     if (alGuess.includes(`${index}`)) {
         updateRiddle();
@@ -256,7 +255,10 @@ const updateRiddle = () => {
 }; 
 updateRiddle();
 // Functions
-const endGame = () => {
+restartGame = () => {
+    location.reload();
+};
+endGame = () => {
     let imgDisplay = document.querySelector('.imageDisplay');
     if (trys === 0){
         riddlesDisplay.innerHTML = `
@@ -264,11 +266,14 @@ const endGame = () => {
     <legend>The Answer is</legend>
     <p class="showAnswer">${guessWord}</p>
     <div class = "slug">Let it sink in.</div>
+    <button class = "reload" onclick="restartGame();">
+    <svg id="reload" class="ionicon" viewBox="0 0 512 512"><path d="M400 148l-21.12-24.57A191.43 191.43 0 00240 64C134 64 48 150 48 256s86 192 192 192a192.09 192.09 0 00181.07-128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"/><path d="M464 97.42V208a16 16 0 01-16 16H337.42c-14.26 0-21.4-17.23-11.32-27.31L436.69 86.1C446.77 76 464 83.16 464 97.42z"/></svg>
+    </button>
 </fieldset>`;
         // alert("alert win");
     }
 }
-const evaluate = () => {
+evaluate = () => {
     if(answer.length != guessWord.length) return;
     let tile = document.querySelector('.guessDisplay');
     const displayWin = document.querySelector('.imageDisplay');
@@ -322,12 +327,12 @@ const evaluate = () => {
     
     // lifeBar();
 };
-const purge = () => {
+purge = () => {
     answer.pop();
     renderLetter(guessDisplay);
 
 }
-const lifeBar = () => {
+lifeBar = () => {
     const lifeLine = document.querySelector('.lifeLine');
     const fullLive = document.querySelector('.fullLive');
     const halfLive = document.querySelector('.halfLive');
@@ -355,17 +360,17 @@ const lifeBar = () => {
     }
 };
 lifeBar();
-const isALetter = (key) => {
+isALetter = (key) => {
     return key.length === 1 && key.match(/[a-z]/i);
 };
-const addInput = (key) => {
+addInput = (key) => {
     if(!isALetter(key)) return;
     if(trys === 0) return;
     if (answer.length === guessWord.length) return;
     answer.push(key);
     renderLetter(guessDisplay);
 };
-const renderLetter = (parent) => {
+renderLetter = (parent) => {
     parent.innerHTML = "";
 
     for (let i = 0; i < answer.length; i++) {
@@ -403,3 +408,5 @@ document.addEventListener('keydown', (e) => {
         addInput(key);
     }
 });
+
+

@@ -50,6 +50,26 @@
     left: 0;
     right: 0;
 }
+.reload {
+    font-size: 30px;
+    height: 2em;
+    width: 2em;
+    justify-self: center;
+    cursor: pointer;
+    z-index: 4;
+    position: absolute;
+    bottom: 2%;
+    left: 40%;
+    color: #050101;
+    border: none;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#reload {
+    height:70%;
+}
 .fullLive {
     display: none;
 }
